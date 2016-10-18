@@ -7,8 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page.title || "pragmatic Bookshelf" %>
+  </div>
 
-<%= yield %>
+  <div id="columns">
+    <div id="side">
+      <div id="cart">
+        <%= render @cart %>
+      </div>
 
+      <ul>
+        <li><a herf="#">ホーム</a></li>
+        <li><a herf="#">よくある質問</a></li>
+        <li><a herf="#">ニュース</a></li>
+        <li><a herf="#">お問い合わせ</a></li>
+      </ul>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

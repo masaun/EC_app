@@ -1,0 +1,15 @@
+<% if notice %>
+  <p id="notice"><%= notice %></p>
+<% end %>
+
+<div class="cart_title">カート</div>
+<table>
+  <%= render(@cart.line_items) %>
+
+  <%= render @cart %>
+</table>
+
+<%= button_to 'カートを空にする', @cart, method: :delete, confirm: '本当にカートを空にしてよいですか？' %>
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>
